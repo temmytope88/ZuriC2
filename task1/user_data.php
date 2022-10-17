@@ -52,9 +52,7 @@
 
         $file = fopen("userdata.csv", "a+");
         $obj = array("name"=>$name, "gender"=>$gender, "country"=>$country, "DOB"=>$DOB, "email"=>$email);
-        $json = json_encode($obj);
-        $input = $json."\n";
-        fwrite($file, $input);
+        fputcsv($file, $obj);
         fclose($file);
         print_r($_POST);
     }
